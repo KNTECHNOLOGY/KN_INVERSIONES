@@ -149,10 +149,16 @@
                     return;
                 }
 
+                // Sumar el nuevo recaudo al abono existente
+                const abonoPrevio = cliente[13] || 0; // Si no hay abono previo, se considera 0
+                const abonoTotal = abonoPrevio + montoRecaudo;
+
+                // Actualizar el saldo, abono y estado
                 document.getElementById(`saldo-${index}`).innerText = formatCurrency(nuevoSaldo);
                 cliente[6] = nuevoSaldo;
                 cliente[12] = 'ABONADO';
-                cliente[13] = montoRecaudo;
+                cliente[13] = abonoTotal;
+                document.getElementById(`Abono-${index}`).innerText = `Abono: ${formatCurrency(abonoTotal)}`;
                 document.getElementById(`estado-${index}`).innerText = `Estado: ABONADO`;
                 localStorage.setItem('clientes', JSON.stringify(clientes));
 
