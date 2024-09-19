@@ -55,11 +55,12 @@
                 <input type="text" id="nombreBusqueda" placeholder="Nombre del cliente" />
 
                 <button onclick="filtrarClientes()">Buscar</button>
+                <button onclick="window.location.href='MenuPrincipal.html'">Volver al Menú</button>
             </div>
             <div id="clientesContainer" class="clientes-container">
                 <!-- Clientes serán cargados aquí -->
             </div>
-            <button onclick="window.location.href='MenuPrincipal.html'">Volver al Menú</button>
+         
         </div>
     </div>
 
@@ -102,7 +103,7 @@
                         <input type="date" id="fecha-${index}" />
                         <button onclick="realizarRecaudo(${index}, ${cliente[6]})">Recaudar Dinero</button>
                         <button onclick="gestionar(${index})">Gestionar</button>
-                        <button onclick="window.location.href='MenuPrincipal.html'">Volver al Menú</button>
+                        
                     `;
                     container.appendChild(clientCard);
                 });
